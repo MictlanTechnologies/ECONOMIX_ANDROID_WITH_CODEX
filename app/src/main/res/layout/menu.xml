@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+
+    tools:context=".Vista.menu">
+
+    <!-- Barra superior: ayuda (izq) y perfil (der) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/btnAyuda"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_icon_circle_teal"
+            android:src="@drawable/ic_help"
+            android:backgroundTintMode="src_in"
+            android:padding="10dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/btnPerfil"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_icon_circle_blue"
+            android:src="@drawable/ic_profile"
+            android:backgroundTintMode="src_in"
+            android:padding="10dp"/>
+    </LinearLayout>
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/txtHolaUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="HOLA USUARIO"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"/>
+
+    <!-- Fila 1: GASTOS / INGRESOS -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Tile GASTOS -->
+        <LinearLayout
+            android:id="@+id/tileGastos"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#0DBBCB"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_gastos" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="GASTOS"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <!-- Tile INGRESOS -->
+        <LinearLayout
+            android:id="@+id/tileIngresos"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#91C7DE"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_ingresos" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Fila 2: AHORRO / GRÁFICOS -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Tile AHORRO -->
+        <LinearLayout
+            android:id="@+id/tileAhorro"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#91C7DE"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_ahorro" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tileGraficas"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#0DBBCB"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_graficas" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
