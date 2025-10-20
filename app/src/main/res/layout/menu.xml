@@ -5,9 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_background"
     android:orientation="vertical"
-    android:padding="16dp"
-
+    android:paddingHorizontal="@dimen/spacing_lg"
+    android:paddingTop="@dimen/spacing_xl"
+    android:paddingBottom="@dimen/spacing_3xl"
     tools:context=".Vista.menu">
 
     <!-- Barra superior: ayuda (izq) y perfil (der) -->
@@ -19,12 +21,13 @@
 
         <ImageButton
             android:id="@+id/btnAyuda"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/bg_icon_circle_teal"
-            android:src="@drawable/ic_help"
-            android:backgroundTintMode="src_in"
-            android:padding="10dp"/>
+            android:layout_width="@dimen/toolbar_icon_size"
+            android:layout_height="@dimen/toolbar_icon_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Ayuda"
+            android:padding="@dimen/spacing_sm"
+            android:src="@drawable/ayuda"
+            android:tint="@color/color_primary" />
 
         <View
             android:layout_width="0dp"
@@ -33,128 +36,184 @@
 
         <ImageButton
             android:id="@+id/btnPerfil"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/bg_icon_circle_blue"
-            android:src="@drawable/ic_profile"
-            android:backgroundTintMode="src_in"
-            android:padding="10dp"/>
+            android:layout_width="@dimen/toolbar_icon_size"
+            android:layout_height="@dimen/toolbar_icon_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Perfil"
+            android:padding="@dimen/spacing_sm"
+            android:src="@drawable/usuario"
+            android:tint="@color/color_primary" />
     </LinearLayout>
 
     <!-- Título -->
     <TextView
         android:id="@+id/txtHolaUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="24dp"
-        android:text="HOLA USUARIO"
-        android:textStyle="bold"
-        android:textSize="28sp"
-        android:textColor="@android:color/white"
-        android:layout_gravity="center"/>
-
-    <!-- Fila 1: GASTOS / INGRESOS -->
-    <LinearLayout
+        style="@style/TextAppearance.Economix.TitleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="@dimen/spacing_2xl"
+        android:layout_marginBottom="@dimen/spacing_xl"
+        android:text="HOLA USUARIO" />
+
+    <!-- Fila 1: GASTOS / INGRESOS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <!-- Tile GASTOS -->
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/tileGastos"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="8dp"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:background="#0DBBCB"
-            android:foreground="?attr/selectableItemBackground"
+            style="@style/Widget.Economix.Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_sm"
+            android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/color_primary_container">
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/ic_gastos" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="GASTOS"
-                android:textStyle="bold"
-                android:textAllCaps="true"
-                android:textColor="@color/white"/>
-        </LinearLayout>
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/tile_icon_size"
+                    android:layout_height="@dimen/tile_icon_size"
+                    android:contentDescription="Icono gastos"
+                    android:src="@drawable/ic_dashboard_black_24dp"
+                    android:tint="@color/color_primary" />
+
+                <TextView
+                    style="@style/TextAppearance.Economix.TitleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="GASTOS"
+                    android:textAllCaps="true" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Tile INGRESOS -->
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/tileIngresos"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="8dp"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:background="#91C7DE"
-            android:foreground="?attr/selectableItemBackground"
+            style="@style/Widget.Economix.Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_sm"
+            android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/color_secondary_container">
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/ic_ingresos" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="@dimen/tile_icon_size"
+                    android:layout_height="@dimen/tile_icon_size"
+                    android:contentDescription="Icono ingresos"
+                    android:src="@drawable/ic_home_black_24dp"
+                    android:tint="@color/color_secondary" />
+
+                <TextView
+                    style="@style/TextAppearance.Economix.TitleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="INGRESOS"
+                    android:textAllCaps="true" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
     <!-- Fila 2: AHORRO / GRÁFICOS -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/spacing_xl"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <!-- Tile AHORRO -->
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/tileAhorro"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="8dp"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:background="#91C7DE"
-            android:foreground="?attr/selectableItemBackground"
+            style="@style/Widget.Economix.Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_sm"
+            android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/color_primary_container">
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/ic_ahorro" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="@dimen/tile_icon_size"
+                    android:layout_height="@dimen/tile_icon_size"
+                    android:contentDescription="Icono ahorro"
+                    android:src="@drawable/ic_notifications_black_24dp"
+                    android:tint="@color/color_primary" />
 
-        <LinearLayout
+                <TextView
+                    style="@style/TextAppearance.Economix.TitleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="AHORRO"
+                    android:textAllCaps="true" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/tileGraficas"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="8dp"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:background="#0DBBCB"
-            android:foreground="?attr/selectableItemBackground"
+            style="@style/Widget.Economix.Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_sm"
+            android:layout_weight="1"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/color_secondary_container">
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/ic_graficas" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="@dimen/tile_icon_size"
+                    android:layout_height="@dimen/tile_icon_size"
+                    android:contentDescription="Icono gráficas"
+                    android:src="@drawable/ic_dashboard_black_24dp"
+                    android:tint="@color/color_secondary" />
+
+                <TextView
+                    style="@style/TextAppearance.Economix.TitleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="GRÁFICAS"
+                    android:textAllCaps="true" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
 </LinearLayout>

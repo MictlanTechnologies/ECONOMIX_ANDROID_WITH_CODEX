@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Brand palette -->
+    <color name="color_primary">#1F7A8C</color>
+    <color name="color_on_primary">#FFFFFFFF</color>
+    <color name="color_primary_container">#C4E6EE</color>
+    <color name="color_on_primary_container">#03232C</color>
+
+    <color name="color_secondary">#F18F44</color>
+    <color name="color_on_secondary">#FFFCF9</color>
+    <color name="color_secondary_container">#FFE1CC</color>
+    <color name="color_on_secondary_container">#2D1400</color>
+
+    <color name="color_tertiary">#4F6F52</color>
+    <color name="color_on_tertiary">#FFFFFF</color>
+    <color name="color_tertiary_container">#D4E7D5</color>
+    <color name="color_on_tertiary_container">#102114</color>
+
+    <!-- Neutrals -->
+    <color name="color_background">#F1F5F9</color>
+    <color name="color_on_background">#1D232A</color>
+    <color name="color_surface">#F8FBFF</color>
+    <color name="color_on_surface">#192026</color>
+    <color name="color_surface_variant">#E1E8F0</color>
+    <color name="color_on_surface_variant">#46525D</color>
+    <color name="color_outline">#94A3B8</color>
+    <color name="color_outline_variant">#C7D2E1</color>
+
+    <!-- Status colors -->
+    <color name="color_success">#2AA76F</color>
+    <color name="color_on_success">#FFFFFF</color>
+    <color name="color_warning">#F4B740</color>
+    <color name="color_error">#BA1A1A</color>
+    <color name="color_on_error">#FFFFFF</color>
+
+    <!-- Legacy fallbacks -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
