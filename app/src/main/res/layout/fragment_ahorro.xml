@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0C4443"
-    android:padding="16dp">
+    android:background="@color/color_background"
+    android:paddingHorizontal="@dimen/spacing_lg"
+    android:paddingTop="@dimen/spacing_xl"
+    android:paddingBottom="@dimen/spacing_3xl">
 
     <!-- Barra superior -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/btnAyuda"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ayuda"
+            android:layout_width="@dimen/toolbar_icon_size"
+            android:layout_height="@dimen/toolbar_icon_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Ayuda"
-            android:padding="10dp"/>
+            android:padding="@dimen/spacing_sm"
+            android:src="@drawable/ayuda"
+            android:tint="@color/color_primary" />
 
         <View
             android:layout_width="0dp"
@@ -30,144 +33,121 @@
 
         <ImageButton
             android:id="@+id/btnPerfil"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/usuario"
+            android:layout_width="@dimen/toolbar_icon_size"
+            android:layout_height="@dimen/toolbar_icon_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Perfil"
-            android:padding="100dp"/>
+            android:padding="@dimen/spacing_sm"
+            android:src="@drawable/usuario"
+            android:tint="@color/color_primary" />
     </LinearLayout>
 
     <!-- Título -->
     <TextView
         android:id="@+id/txtTitulo"
+        style="@style/TextAppearance.Economix.TitleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="12dp"
-        android:text="AHORRO"
-        android:textStyle="bold"
-        android:textSize="28sp"
-        android:textColor="@android:color/white"/>
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_xl"
+        android:text="AHORRO" />
 
     <!-- Contenido -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_surface_card"
         android:orientation="vertical"
-        android:paddingHorizontal="24dp">
+        android:padding="@dimen/spacing_xl">
 
         <!-- OBJETIVO -->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Economix.TextInputLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:boxBackgroundMode="filled"
-            app:boxBackgroundColor="@android:color/white"
-            app:boxCornerRadiusTopStart="24dp"
-            app:boxCornerRadiusTopEnd="24dp"
-            app:boxCornerRadiusBottomStart="24dp"
-            app:boxCornerRadiusBottomEnd="24dp">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etObjetivo"
+                style="@style/Widget.Economix.TextInputEditText"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:hint="OBJETIVO"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/black"/>
+                android:layout_height="@dimen/input_height"
+                android:hint="OBJETIVO" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Economix.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:boxBackgroundMode="filled"
-            app:boxBackgroundColor="@android:color/white"
-            app:boxCornerRadiusTopStart="24dp"
-            app:boxCornerRadiusTopEnd="24dp"
-            app:boxCornerRadiusBottomStart="24dp"
-            app:boxCornerRadiusBottomEnd="24dp">
+            android:layout_marginTop="@dimen/spacing_lg">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etDescripcion"
+                style="@style/Widget.Economix.TextInputEditText"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:hint="DESCRIPCION"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/black"/>
+                android:layout_height="@dimen/input_height"
+                android:hint="DESCRIPCION" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- META -->
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Economix.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:boxBackgroundMode="filled"
-            app:boxBackgroundColor="@android:color/white"
-            app:boxCornerRadiusTopStart="24dp"
-            app:boxCornerRadiusTopEnd="24dp"
-            app:boxCornerRadiusBottomStart="24dp"
-            app:boxCornerRadiusBottomEnd="24dp">
+            android:layout_marginTop="@dimen/spacing_lg">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etMeta"
+                style="@style/Widget.Economix.TextInputEditText"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="@dimen/input_height"
                 android:hint="META"
-                android:inputType="numberDecimal"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/black"/>
+                android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Economix.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:boxBackgroundMode="filled"
-            app:boxBackgroundColor="@android:color/white"
-            app:boxCornerRadiusTopStart="24dp"
-            app:boxCornerRadiusTopEnd="24dp"
-            app:boxCornerRadiusBottomStart="24dp"
-            app:boxCornerRadiusBottomEnd="24dp">
+            android:layout_marginTop="@dimen/spacing_lg">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etAhorrado"
+                style="@style/Widget.Economix.TextInputEditText"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="@dimen/input_height"
                 android:hint="AHORRADO"
-                android:inputType="numberDecimal"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/black"/>
+                android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- AVANCE (NO botón): barra gruesa con texto encima -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="@dimen/spacing_xl">
 
             <com.google.android.material.progressindicator.LinearProgressIndicator
                 android:id="@+id/progresoAhorro"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:progress="70"
                 app:indeterminate="false"
-                app:trackThickness="56dp"
-                app:trackCornerRadius="28dp"
-                app:trackColor="@android:color/white"
-                app:indicatorColor="#C6FF62"
+                app:trackThickness="@dimen/spacing_md"
+                app:trackCornerRadius="@dimen/corner_md"
+                app:trackColor="@color/color_surface_variant"
+                app:indicatorColor="@color/color_primary"
                 app:indicatorInset="0dp"/>
 
             <TextView
                 android:id="@+id/labelAvance"
+                style="@style/TextAppearance.Economix.BodyLarge"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/spacing_sm"
                 android:gravity="center"
                 android:text="AVANCE"
-                android:textStyle="bold"
                 android:textAllCaps="true"
-                android:textColor="@android:color/black"/>
+                android:textColor="@color/color_on_surface"/>
         </FrameLayout>
     </LinearLayout>
 
@@ -175,69 +155,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:paddingHorizontal="16dp"
+        android:layout_marginTop="@dimen/spacing_xl"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:paddingHorizontal="@dimen/spacing_sm">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnGuardar"
+            style="@style/Widget.Economix.Button.Primary"
             android:layout_width="0dp"
-            android:layout_height="48dp"
             android:layout_weight="1"
-            android:layout_marginEnd="6dp"
-            android:text="GUARDAR"
-            android:textColor="@android:color/white"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:singleLine="true"
-            app:autoSizeTextType="uniform"
-            app:autoSizeMinTextSize="12sp"
-            app:autoSizeMaxTextSize="16sp"
-            app:autoSizeStepGranularity="1sp"
-            app:cornerRadius="24dp"
-            app:backgroundTint="#91c7de"
-            app:insetLeft="0dp" app:insetRight="0dp" app:insetTop="0dp" app:insetBottom="0dp"
-            android:paddingHorizontal="12dp"/>
+            android:layout_marginEnd="@dimen/spacing_sm"
+            android:text="GUARDAR" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEliminar"
+            style="@style/Widget.Economix.Button.Destructive"
             android:layout_width="0dp"
-            android:layout_height="48dp"
             android:layout_weight="1"
-            android:layout_marginHorizontal="6dp"
-            android:text="ELIMINAR"
-            android:textColor="@android:color/white"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:singleLine="true"
-            app:autoSizeTextType="uniform"
-            app:autoSizeMinTextSize="12sp"
-            app:autoSizeMaxTextSize="16sp"
-            app:autoSizeStepGranularity="1sp"
-            app:cornerRadius="24dp"
-            app:backgroundTint="#0DBBCB"
-            app:insetLeft="0dp" app:insetRight="0dp" app:insetTop="0dp" app:insetBottom="0dp"
-            android:paddingHorizontal="12dp"/>
+            android:layout_marginHorizontal="@dimen/spacing_sm"
+            android:text="ELIMINAR" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLimpiar"
+            style="@style/Widget.Economix.Button.Surface"
             android:layout_width="0dp"
-            android:layout_height="48dp"
             android:layout_weight="1"
-            android:layout_marginStart="6dp"
-            android:text="LIMPIAR"
-            android:textColor="@android:color/white"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:singleLine="true"
-            app:autoSizeTextType="uniform"
-            app:autoSizeMinTextSize="12sp"
-            app:autoSizeMaxTextSize="16sp"
-            app:autoSizeStepGranularity="1sp"
-            app:cornerRadius="24dp"
-            app:backgroundTint="#91c7de"
-            app:insetLeft="0dp" app:insetRight="0dp" app:insetTop="0dp" app:insetBottom="0dp"
-            android:paddingHorizontal="12dp"/>
+            android:layout_marginStart="@dimen/spacing_sm"
+            android:text="LIMPIAR" />
     </LinearLayout>
 </LinearLayout>

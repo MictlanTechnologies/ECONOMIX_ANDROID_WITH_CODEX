@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#8DD4E0</color>
+    <color name="color_on_primary">#00343E</color>
+    <color name="color_primary_container">#054857</color>
+    <color name="color_on_primary_container">#C5F0FB</color>
+
+    <color name="color_secondary">#FFB784</color>
+    <color name="color_on_secondary">#421800</color>
+    <color name="color_secondary_container">#5F2B00</color>
+    <color name="color_on_secondary_container">#FFDCC0</color>
+
+    <color name="color_tertiary">#B4CCB5</color>
+    <color name="color_on_tertiary">#1E3521</color>
+    <color name="color_tertiary_container">#354C37</color>
+    <color name="color_on_tertiary_container">#D0E8D1</color>
+
+    <color name="color_background">#11161B</color>
+    <color name="color_on_background">#E0E6ED</color>
+    <color name="color_surface">#181E24</color>
+    <color name="color_on_surface">#E2E8F0</color>
+    <color name="color_surface_variant">#3D4752</color>
+    <color name="color_on_surface_variant">#C5CED8</color>
+    <color name="color_outline">#8B95A1</color>
+    <color name="color_outline_variant">#454F5A</color>
+
+    <color name="color_success">#4DD89A</color>
+    <color name="color_on_success">#002616</color>
+    <color name="color_warning">#F6C864</color>
+    <color name="color_error">#FFB4AB</color>
+    <color name="color_on_error">#690005</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
